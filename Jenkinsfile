@@ -9,7 +9,7 @@ pipeline {
 
         stage('REPO Cloning'){
             steps {
-                bat 'xcopy /S "*" "C:/xampp/htdocs/newxampp" /Y'   
+                bat 'xcopy /S "*" "D:/XAMPP/htdocs/devops" /Y'   
 //[add path of folder that you created in htdocs]
             }
         }
