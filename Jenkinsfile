@@ -1,22 +1,19 @@
 pipeline {
     agent any
-    stages{
-        stage('checking python version') {
+    stages {
+        stage('Checkout and Clone') {
             steps {
-                bat 'python -V'
+                git branch: 'master', url: 'https://github.com/prachii2002/devopss.git'
             }
         }
-
-        stage('REPO Cloning'){
+        stage('Build') {
             steps {
-                bat 'xcopy /S "*" "D:/XAMPP/htdocs/devops" /Y'   
-//[add path of folder that you created in htdocs]
+                bat 'echo "Building the code"'
             }
         }
-
-        stage('Print done'){
-            steps{
-                echo 'Done!'
+        stage('Deploy') {
+            steps {
+                bat 'copy *.html D:\\xampp\\htdocs\\devops\\a.html'
             }
         }
     }
